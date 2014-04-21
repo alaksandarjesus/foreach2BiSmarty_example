@@ -1,0 +1,68 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Validation"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			<div class="alert alert-danger">Use &#123;nocache &#125; &#123;/nocache &#125; if you have switched on cache and returning form values and error messages</div>
+			<div class="row">
+			
+			<h3>Example</h3>
+			<p class="alert alert-warning">$validate = Validator::input($_POST, array ("UserName"=>"required|alpha_numeric","Password"=>"required"));<br />
+													 if($validation)&#123;Your code to run after successful validation;&#125; <br />
+													 else&#123;Your code to run on validation failure;&#125;</p>
+			<p class="alert alert-warning">$validate_file = Validator::file(array("Photo"=>$_FILES["Photo"]), array("name"=>"required|does_not_exist:main,users,Photo|file_not_exists:assets/images",
+																											   "type"=>"mime:jpg,gif,png","size"=>"size_between:5,55"));</p>
+			<h3>Rules</h3>
+			<table class="table table-striped" >
+				<thead><tr><th>S.No</th><th>Rule</th><th>syntax</th><th>On Error Return</th></tr></thead>
+				<tbody>
+				<tr><td>1</td><td>Required</td><td>required</td><td>The $key is required</td></tr>
+				<tr><td>2</td><td>Alphabets & Numerics</td><td>alpha_numeric</td><td>The $key should be alphanumeric.</td></tr>
+				<tr><td>3</td><td>Alphabets only</td><td>alpha</td><td>The $key should contain only alphabets.</td></tr>
+				<tr><td>4</td><td>Control Characters</td><td>cntrl</td><td>The $key should be control characters.</td></tr>
+				<tr><td>5</td><td>Numerics Only</td><td>digit</td><td>The $key should be digits.</td></tr>
+				<tr><td>6</td><td>Printable Characters</td><td>graph</td><td>The $key should be printable character(s) except space.</td></tr>
+				<tr><td>7</td><td>Lower Case</td><td>lower</td><td>The $key should be lower case letters.</td></tr>
+				<tr><td>8</td><td>punct</td><td>punct</td><td>The $key should not be white space or an alphanumeric character.</td></tr>
+				<tr><td>9</td><td>No White Space</td><td>space</td><td>The $key should not have white space.</td></tr>
+				<tr><td>10</td><td>Upper Case</td><td>upper</td><td>The $key should be uppercase letters.</td></tr>
+				<tr><td>11</td><td>Hexadecimal Digit</td><td>xdigit</td><td>"The $key should be hexadecimal digit.</td></tr>
+				<tr><td>12</td><td>Minimum string length</td><td>str_len_min:$length</td><td>The $key should be minimum $length characters.</td></tr>
+				<tr><td>13</td><td>Maximum string length</td><td>str_len_max:$length</td><td>The $key should be maximum $length characters.</td></tr>
+				<tr><td>14</td><td>String length inbetween</td><td>str_len_between:$min_len,$max_len</td><td>The $key should be minimum $min_len and maximum $max_len characters.</td></tr>
+				<tr><td>15</td><td>String length equals</td><td>str_len_equals:$length</td><td>The $key should be $length characters only</td></tr>
+				<tr><td>16</td><td>Integer Values less than</td><td>value_less:$int_value</td><td>The $key should be less than $int_value </td></tr>
+				<tr><td>17</td><td>Integer Values greater than</td><td>value_greater:$int_value</td><td>The $key should be greater than $int_value</td></tr>
+				<tr><td>18</td><td>Integer Values inbetween</td><td>value_between:min_value,max_value</td><td>The $key should not be less than $min_value and greater than $max_value</td></tr>
+				<tr><td>19</td><td>Integer Values equals</td><td>value_equals:int_value</td><td>The $key should be $int_value value only</td></tr>
+				<tr><td>20</td><td>email</td><td>email</td><td>The $key is not a valid email.</td></tr>
+				<tr><td>21</td><td>boolean</td><td>boolean</td><td>The $key is not a valid boolean.</td></tr>
+				<tr><td>22</td><td>Number should be float</td><td>float</td><td>The $key is not a valid float.</td></tr>
+				<tr><td>23</td><td>Number should be integer</td><td>int</td><td>The $key is not a valid integer.</td></tr>
+				<tr><td>24</td><td>Valid IP</td><td>ip</td><td>The $key is not a valid IP.</td></tr>
+				<tr><td>25</td><td>Valid URL</td><td>url</td><td>The $key is not a valid URL.</td></tr>
+				<tr><td>26</td><td>Does not exist in table</td><td>does_not_exist:db,table,column</td><td>The $key is available in our database</td></tr>
+				<tr><td>27</td><td>Does exist in table</td><td>does_exist:db,table,column</td><td>The $key does not match with our records</td></tr>
+				<tr><td>28</td><td>File Upload Extensions</td><td>mime:jpg,gif,xls</td><td>The allowed extensions for $key are $extensions.</td></tr>
+				<tr><td>29</td><td>Minimum File Size in kB</td><td>size_min:$min_size</td><td>The allowed file size for $key should be minimum $min_size kB</td></tr>
+				<tr><td>30</td><td>Maximum File Size in kB</td><td>size_max:$max_size</td><td>The allowed file size for $key should be maximum $max_size kB</td></tr>
+				<tr><td>31</td><td>Exact File Size in kB</td><td>size_exact:$exact_size</td><td>The allowed file size for $key should be exactly $exact_size kB</td></tr>
+				<tr><td>32</td><td>File Size in Between in kB</td><td>size_between:$min_size,$max_size</td><td>The allowed file size for $key should be minimum $min_size kB and maximum $max_size kB</td></tr>
+				<tr><td>33</td><td>File Exists</td><td>file_exists:$location</td><td>$filename file does not exist</td></tr>
+				<tr><td>34</td><td>File Does not Exists</td><td>file_not_exists:$location</td><td>$filename exists</td></tr>
+				</tbody>
+			</table>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

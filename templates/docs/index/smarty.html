@@ -1,0 +1,25 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Smarty"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>These are basic smarty variables that were set before template initialization.</li>
+					<li>You can set your smarty assignments here like <span class="text-bordered">"Settemplatedir" => "templates"</span></li>
+					<li><strong>Note : While loading dynamic contents example: List of users in database, List of products use &#123;nocache&#125;&#123;/nocache&#125; </strong></li>
+				</ol>
+			</div>
+	
+		</div>
+	</div>
+</div>
+
+{/block}

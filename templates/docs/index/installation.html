@@ -1,0 +1,32 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Installation"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Welcome to explore foreach 2Bi Smarty php mvc framework.</li>				
+					<li>Click {Html::link('home/credits', Credits)} to understand the basic components utilized in this mvc framework as a credit for making their work opensource.</li>				
+					<li>Download the latest copy of from <a href="#" >here.</a></li>		
+					<li>This documentation is based on example application which can be downloaded from <a href="#" >here.</a></li>		
+					<li>Unzip the file in your server/localhost.</li>		
+					<li>Set read/write permissions to the files and folders.<a href="#" >here.</a></li>				
+					<li>Open your webbrowsers and you should see the welcome screen as below.</li>				
+					<img src="{App::Config('url')}assets/images/docs/welcome_screen.png" alt="welcome_screen" width="400" height="200" >
+					<li>Change the address bar in webbrowser to yoururl/docs and yoururl/example.</li>
+					<li>If you dont see any page changes, check the .htaccess file and your server configuration. Your server FileOverride option is to be set for .htaccess performance.</li>
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

@@ -1,0 +1,59 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Controller"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			
+			<div class="row">
+				<ol>
+				<li>Open controller folder and create your Controller. 
+					<br><span class="text text-warning">First time users, create your Default Controller as specified in app/config.php</span></li>
+				<li>Naming Convention should be {HTML::bul("MyclassnameController.php")}. 
+					<br><span class="text text-warning">Example : UserController.php, HomeController.php</span></li>
+				<li>Open your controller file and type the following code with your controller name and method{HTML::br()}
+					<div class="code">&lt;?php<br />{HTML::space(4)}Class <u>Myclassname</u>Controller &#123;<br />
+					{HTML::space(8)}public function <u>Defaultmethod</u>()&#123;<br />
+						<span class="text text-primary">{HTML::space(16)}Your Code Here</span><br />
+						{HTML::space(16)}
+							<span class="label label-danger">Rendering View from templates</span>	return View::render("folder/file");
+						</span><br />
+					{HTML::space(8)}&#125;<br />
+					{HTML::space(4)}&#125;</div>
+				</li>
+				<li>Passing Values to Views</li>
+				<div class="code">&lt;?php<br />{HTML::space(4)}Class <u>Myclassname</u>Controller &#123;<br />
+					{HTML::space(8)}public function <u>Defaultmethod</u>()&#123;<br />
+						<span class="text text-primary">{HTML::space(16)}
+							<span class="label label-success">Variable Assigned as Array Element</span>
+							$smarty['var1'] = "Variable 1";<br /><br />
+			{HTML::space(16)}
+							<span class="label label-success">Variable Assigned as Array Element</span> $smarty[]=array("var2"=>"Variable 2");	<br /><br />
+			{HTML::space(16)}
+							<span class="label label-success">Variable as Multidimension Array Element</span> $smarty[]=array("var3"=>array("Variable 3"));	<br /><br />
+			{HTML::space(16)}
+							<span class="label label-success">Variable as Mixed Arrays</span>
+			$smarty[]=array("var4"=>array("var4a"=>"Variable 4"),"var5"=>"Variable 5");	<br /><br />
+			{HTML::space(16)}
+							<span class="label label-success">Variable as Mixed Arrays</span>
+			$smarty[]=array("var6"=>array("var6a"=>array("Variable 6","Variable 7")),"var8"=>"Variable 8");	<br /><br />
+					{HTML::space(16)}
+							<span class="label label-danger">Rendering View from templates</span>	return View::render("folder/file",$smarty);
+						</span><br />
+					{HTML::space(8)}&#125;<br />
+					{HTML::space(4)}&#125;</div>
+				
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

@@ -1,0 +1,27 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Mime"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Open app/mime.php</li>
+					<li>This is a set of mime types that are useful when you call for file upload to check the right format.</li>
+					<li>You are free to write the missing mime type of  your own.</li>
+					<li>Format: <span class="text-bordered">"extension"</span>=><span class="text-bordered">file-type</span></li>
+							
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

@@ -1,0 +1,14 @@
+body{background:#FFF;}
+#serverRenderTime{color: white;float: right;}
+#browserRenderTime {color: white;float: right;}
+#header{background-color:#333;color: white;}
+#footer{color: #FFF;background-color: #333; }
+#content{margin-top:70px; margin-bottom:100px;}
+#youtube{margin-top:70px;}
+#content li{line-height: 200%;}
+embed{margin: 0 auto;padding: 0;}
+.code{font-weight: bold;padding:5px 5px;color: #d04f86;background-color: #f9f2f4;}
+.page_title {font-size: 18px; font-weight: bold;}
+.text-bordered {border:1px solid black; padding:3px;font-weight: bold;}
+
+

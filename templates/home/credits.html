@@ -1,0 +1,44 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style("assets/css/cover.css")}
+{/block}
+{block name=body}
+ <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">foreach 2Bi Smarty</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="{App::Config('url')}">Home</a></li>
+                <li><a href="{App::Config('url')}docs">Documentation</a></li>
+                <li><a href="{App::Config('url')}home/credits">Credits</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="credits">
+          	<h3>Our sincere thanks to </h3>
+            <ol>
+					<li>JREAM with this video tutorial https://www.youtube.com/watch?v=Aw28-krO7ZM</li>
+				<li><a href="http://www.smarty.net" >Smarty Template Engine.</a></li>            
+				<li><a href="http://getbootstrap.com/" >Bootstrap 3.0</a></li>            
+				<li><a href="http://phpmailer.worxware.com" >PHP Mailer</a></li>            
+				<li><a href="http://phperror.net" >PHP Error</a></li>            
+				<li><a href="http://ckeditor.com" >CK Editor</a></li>            
+				<li><a href="https://datatables.net" >Datatables</a></li>            
+		         
+            </ol>
+          </div>
+         
+          
+
+        </div>
+
+      </div>
+
+    </div>
+{/block}

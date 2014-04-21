@@ -1,0 +1,25 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Configuration"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Open app/database.php</li>
+					<li>This mvc supports multiple databases. So fill out your database credentials.</li>
+									
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

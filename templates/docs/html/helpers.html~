@@ -1,0 +1,38 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="HTML Helpers"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			
+			<div class="row">
+					<table class="table table-striped" >
+				<thead>
+					<tr><th>S.No.</th><th>Helper For</th><th>Example</th><th>Output</th></tr>	
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>linebreaks</td><td>&#123;HTML::br(3)&#125; <br />3 Line breaks created.</td><td>{HTML::br(3)}Open Page Source to see line breaks.</td></tr>	
+					<tr><td>2</td><td>Space</td><td>&#123;HTML::space(5)&#125;<br />5 spaces created.</td><td>{HTML::space(5)}Open Page source to see spaces.</td></tr>	
+					<tr><td>3</td><td>Hyperlink</td><td>&#123;HTML::link("#","Link")&#125;<br />Equivalent to &lt;a href</td><td>{HTML::link("#","Link")}</td></tr>	
+					<tr><td>4</td><td>Hyperlink with class</td><td>&#123;HTML::link("#","Link",[class=>Myclass]")&#125;<br />Equivalent to &lt;a href</td><td>{HTML::link("#","Link",["class"=>"Myclass"])}</td></tr>
+					<tr><td>5</td><td>button</td><td>&#123;HTML::button("Search")&#125;<br />Equivalent to &lt;button</td><td>{HTML::button("Search")}</td></tr>	
+					<tr><td>6</td><td>button with class</td><td>&#123;HTML::button("Send",["class"=>"btn btn-sm"]")&#125;<br />Equivalent to &lt;button</td><td>{HTML::button("Send",["class"=>"btn btn-sm btn-primary"])}</td></tr>	
+					<tr><td>5</td><td>Style Sheet</td><td>&#123;HTML::style("location")&#125;<br />Equivalent to &lt;link</td><td>{HTML::style("assets/css/template.css")}</td></tr>								
+					<tr><td>5</td><td>Style Sheet</td><td>&#123;HTML::script("location")&#125;<br />Equivalent to &lt;script</td><td>{HTML::script("assets/js/template.js")}</td></tr>								
+					</tbody>	
+			</table>
+			
+			
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

@@ -1,0 +1,33 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Page"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Open app/message.php</li>
+					<li>This will be one stop solution to create webmessages. In case if you are looking to change the message, its not required to search in the code again.</li>
+					<li>Write Down your message and call it in the function</li>
+					<li class="text-primary">Example</li>
+				
+					<div class="well">
+						App::message("error.login")
+						
+					<p class="text-danger">This will fetch the message from the app/message.php</p>
+						
+					</div>
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

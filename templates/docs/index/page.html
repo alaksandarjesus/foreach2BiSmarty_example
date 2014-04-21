@@ -1,0 +1,42 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Page"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Open app/page.php</li>
+					<li>This will be one stop solution to create page titles and header informations.</li>
+					<li>By default it is set to true. If you dont want this option open <span class="text-bordered">app/config.php</span> and set<span class="text-bordered"> use_page_class=>false.</span></li>
+					<li>If you end-up below error then you might not have introduced the array in page.php</li>
+					<img src="{App::Config('url')}assets/images/docs/page_error.png" alt="welcome_screen" width="400" height="200" >
+					<p class="text-primary">Example</p>		
+					<div class="well">
+						<p class="text-danger">In your Controller</p>
+						public function page(){ <br><br>
+		
+								return View::render("<span class="text-bordered">docs/index/page</span>"); <br><br>
+		
+							};			 <br>
+							
+						<p class="text-danger">In app/page.php</p>		
+							<span class="text-bordered">'docs/index/page'</span>=>array(	'title'	=> 'Page',
+																'keywords'=>'CSS, HTML',
+																'description'=>'Sample Creation Page'), <br>
+						
+					</div>
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

@@ -1,0 +1,46 @@
+#menu{text-align: center;}
+
+
+/*#menu >ul,li{margin:0 auto; padding:0;list-style-type: none; list-style: none;}*/
+
+#menu ul li{display: inline-block; padding:5px 10px; width: 120px;}
+
+#menu a {color: white;}
+
+/*********** COLORS *************/
+/* Create your own class for your own colors */
+.red {
+	background: #B80202;
+	border: #B80202 1px solid
+}
+	.red:hover, .red:focus{
+		background-color:#e30606
+	}
+.green {
+	background: #46c431;
+	border: #46c431 1px solid
+}
+	.green:hover,.green:focus {
+		background-color:#44e329
+	}
+.yellow {
+	background: #D9CE1C;
+	border: #D9CE1C 1px solid
+}
+	.yellow:hover,.yellow:focus {
+		background-color:#eee117
+	}
+.cyan {
+	background: #23c6de;
+	border: #23c6de 1px solid
+}
+	.cyan:hover,.cyan:focus {
+		background-color:#18d8f4
+	}
+.blue {
+	background: #3271d9;
+	border: #3271d9 1px solid
+}
+	.blue:hover,.blue:focus {
+		background-color:#377ef2
+	}

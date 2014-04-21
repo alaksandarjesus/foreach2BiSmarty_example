@@ -1,0 +1,32 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Configuration"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Open app/config.php</li>				
+					<li>Set <span class="text-bordered">debug => true</span> to display errors.</li>	
+					<li>Set your default controller <span class="text-bordered">DefaultController => Your Controller Name</span>.</li>				
+					<li>Set your default function <span class="text-bordered">DefaultMethod => Your function to be called inside the controller.</span>.</li>				
+					<li class="text-danger">Remember each controller should have this function within it.</li>				
+					<li>Set your base url <span class="text-bordered">url => "http://yourpath"</span> with a backslash at the end.</li>					
+					<li>To be safe on different timezones set it with reference to php manual.</li>					
+					<li>Use <span class="text-bordered">keygenerator.php</span> in root folder, copy and paste it.</li>					
+					<li>Set <span class="text-bordered">use_page_class=>true</span> if you wish to have a point solution for your page head information. Optional</li>
+						
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

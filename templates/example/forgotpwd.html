@@ -1,0 +1,24 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style("assets/css/signin.css")}
+{/block}
+{block name=body}
+
+  <div class="container">
+			<h3>{$Welcome|default:null}</h3>
+			
+ 		<h4>In this application we will see a sample Registration & Login Form</h4>	
+ 		{nocache}		
+      {Form::open("example/resetpwd",["method"=>"POST","class"=>"form-signin","role"=>"form"])}
+       	<h3>Reset Password</h3>
+       {if isset($message) }<p span class="alert alert-danger">{$message|default:null}</p>{/if}
+       <p>{Form::email("Email",["class"=>"form-control","placeholder"=>"Email",required])}</p>
+       <p span class="text-danger">{Form::error_first("Email")}</p>
+      {Form::submit("Reset Password",["class"=>"btn btn-lg btn-primary btn-block"])}
+      
+      <a href="{App::Config('url')}example/register" >Register </a><br/>
+      {Form::close()}
+   	{/nocache}
+
+    </div> 
+{/block}

@@ -1,0 +1,29 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style("assets/css/signin.css")}
+
+{/block}
+{block name=body}
+
+  <div class="container">
+		{nocache}	
+      {Form::open("example/newuser",["method"=>"POST","class"=>"form-signin","role"=>"form","file"=>true])}
+       	<h3>Registration Form</h3>
+       <p>{Form::text("UserName",["class"=>"form-control","placeholder"=>"UserName","value"=>"{Form::value('UserName')}",autofocus])}</p>
+       <p span class="text-danger">{Form::error_first("UserName")}</p>
+       <p>{Form::password("Password",["class"=>"form-control","placeholder"=>"Password"])}</p>
+       <p span class="text-danger">{Form::error_first("Password")}</p>
+        <p>{Form::email("Email",["class"=>"form-control","value"=>"{Form::value('Email')}","placeholder"=>"Your Email Address"])}</p>
+       <p span class="text-danger">{Form::error_first("Email")}</p>
+       <p>{Form::file("Photo")}</p>
+       <p span class="text-danger">{Form::error_all(["Photo"])}</p>
+        <p span class="text-danger">{Form::error_first("name")}</p>
+      	{Form::submit("Register",["class"=>"btn btn-lg btn-primary btn-block"])}
+       <p span class="text-danger">{$registration_error|default:null}</p>
+      <a href="{App::Config('url')}example/forgotpwd" >Forgot Password </a><br/>
+      <a href="{App::Config('url')}example/register" >Register </a><br/>
+      {Form::close()}
+   	 {/nocache}
+
+    </div> 
+{/block}

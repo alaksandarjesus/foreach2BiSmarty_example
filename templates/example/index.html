@@ -1,0 +1,30 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style("assets/css/signin.css")}
+{/block}
+{block name=body}
+
+  <div class="container">
+			<h3>{$Welcome}</h3>
+			<h4>In this application we will see a sample Registration & Login Form</h4>
+			<ol>
+				<li>Open app/config.php and check the url is marked correct. If you have renamed the folder, change the same in url too. </li>
+				<li>Create database using templates/example/foreachmvc.sql</li>
+				<li>Open app/mail.php and update your Email Address and Name. For testing purpose use your gmail account authentication.</li>
+			</ol>	
+ 			{nocache}		
+      {Form::open("example/login",["method"=>"POST","class"=>"form-signin","role"=>"form"])}
+       	<h3>Login Form</h3>
+       {if isset($message) }<p span class="alert alert-danger">{$message|default:null}</p>{/if}
+       <p>{Form::text("UserName",["class"=>"form-control","placeholder"=>"UserName","value"=>"{Form::value('UserName')}",autofocus])}</p>
+       <p span class="text-danger">{Form::error_first("UserName")}</p>
+       <p>{Form::password("Password",["class"=>"form-control","placeholder"=>"Password"])}</p>
+       <p span class="text-danger">{Form::error_first("Password")}</p>
+      {Form::submit("Login",["class"=>"btn btn-lg btn-primary btn-block"])}
+       <a href="{App::Config('url')}example/forgotpwd" >Forgot Password </a><br/>
+      <a href="{App::Config('url')}example/register" >Register </a><br/>
+      {Form::close()}
+   	{/nocache}
+
+    </div> 
+{/block}

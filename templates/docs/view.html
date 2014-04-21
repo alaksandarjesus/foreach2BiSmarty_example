@@ -1,0 +1,68 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="View"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			
+			<div class="row">
+				<p class="alert alert-success">Enter the database credentials at <strong>app/database.php</strong>.</p>
+			<p class="text-danger">This mvc support multiple database. You are free to add multiple database to <strong>app/database.php</strong></p>
+			<ol>
+				<li>Open Templates Folder</li>
+				<li>Create a folder of name of the controller that renders from that controller.</li>
+				<li>Create a file with extension <b>.html</b>.</li>
+				<li>To display variables</li>
+					<div class="code">
+					{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as Array Element</span>
+						<span class="text-primary">&#123;$var1&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as Array Element</span>
+							<span class="text-primary">&#123;$var2&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as MultiDimensional Array</span>
+							<span class="text-primary">&#123;$var3.0&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as MultiDimensional Array</span>
+							<span class="text-primary">&#123;$var4.var4a&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as MultiDimensional Array</span>
+							<span class="text-primary">&#123;$var5&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as MultiDimensional Array</span>
+							<span class="text-primary">&#123;$var6.var6a.0&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as MultiDimensional Array</span>
+							<span class="text-primary">&#123;$var6.var6a.1&#125;</span><br />
+					<br />{HTML::space(4)}
+							<span class="label label-success">Variable Assigned as MultiDimensional Array</span>
+							<span class="text-primary">&#123;$var8&#125;</span><br />
+					</div>
+					<li>For Template Inheritance - Create a folder called "layouts".</li>
+					<li>Create a file with your layout with extension <b>.html</b></li>
+					<li>Create <span class="text-danger">&#123;block name="head"&#125;&#123;/block&#125;</span> in head section</li>
+					<li>Create <span class="text-danger">&#123;block name="body"&#125;&#123;/block&#125; </span>in body section</li>
+					<li>In your view file add in the first line <span class="text-danger"> &#123;extends file="layouts/yourfile.html"&#125;</span></li>
+					<li>Create <span class="text-danger">&#123;block name="head"&#125; Your Head Elements Here&#123;/block&#125; </span></li>
+					<li>Create <span class="text-danger">&#123;block name="body"&#125; Your Body Elements Here &#123;/block&#125; </span></li>
+					<li>Refer <a href="http://www.smarty.net/inheritance">Smarty Inheritance</a> for more details</li>
+					<li>To create page meta tags, use <span class="text-primary">app/config/page.php </span>as one point solution.</li>
+					<li>In the layout file write code for metatags as<span class="text-danger">&#123;$title&#125;</span> </li>
+					<li>Refer video for more details</li>
+					
+		</ol>
+			
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

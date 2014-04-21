@@ -1,0 +1,28 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Redirect"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			
+			<div class="row">
+				<p class="alert alert-danger">$smarty is optional.</p>
+			<p>Redirects back to the last page visited.</p>
+			<p class="alert alert-success">Redirect::back($smarty)</p>
+			<p>Redirects back to a new page.</p>
+			<p class="alert alert-success">Redirect::to(controller/method,$smarty)</p>
+			
+			
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

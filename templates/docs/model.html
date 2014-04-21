@@ -1,0 +1,60 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Model"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			
+			<div class="row">
+				<p class="alert alert-success">Enter the database credentials at <strong>app/database.php</strong>.</p>
+			<p class="text-danger">This mvc support multiple database. You are free to add multiple database to <strong>app/database.php</strong></p>
+			<ol>
+				<li>Create a file as <u class="text-danger">Mymodel</u>Model.php in model folder.</li>			
+				<li>Open your controller file and call the model as <u class="text-danger">Mymodel</u>::method();</li>	
+				<li>Get Data From Database.</li>	
+				<div class="well well-sm">
+				<p class="text-primary"><strong>General Syntax</strong></p>
+				<p class="text-primary">Database::get(App::DB('dbparams'),column,table,condition=optional,data=optional)</p>
+				<p class="text-primary"><strong>Get All Data from the table</strong></p>
+				<p class="text-primary">Database::get(App::DB('dbparams'),*,table);</p>
+				<p class="text-danger"><strong>Output</strong></p>
+				<p class="text-danger">Array("Column1"=>Array("data1","data2"),"Column2"=>Array("data3","data4")....)</p>
+				<p class="text-primary"><strong>Get All Data from the table with condition</strong></p>
+				<p class="text-primary">Database::get(App::DB('dbparams'),*,table,"WHERE ColumnName = ?",array(value1));</p>
+				<p class="text-danger"><strong>Output</strong></p>
+				<p class="text-danger">Array("Column1"=>Array("data1","data2"),"Column2"=>Array("data3","data4")....);</p>
+				<p class="text-primary"><strong>Get Specific Column from the table with condition</strong></p>
+				<p class="text-primary">Database::get(App::DB('dbparams'),"Column1",table,"WHERE ColumnName = ?",array(value1));</p>
+				<p class="text-danger"><strong>Output</strong></p>
+				<p class="text-danger">Array("Column1"=>Array("data1","data2"....))</p>
+				</div>
+				<li>Insert Into Database.</li>	
+				<div class="well well-sm">
+				<p class="text-primary"><strong>General Syntax</strong></p>
+				<p class="text-primary">Database::insert(App::DB('dbparams'),table,array("column1"=>"value","column2"=>"value"));</p>
+				</div>
+				<li>Update Database.</li>	
+				<div class="well well-sm">
+				<p class="text-primary"><strong>General Syntax</strong></p>
+				<p class="text-primary">Database::update(App::DB('dbparams'),table,ColumnName,ColumnValue, array(ColumnName,'=',ColumnValue));</p>
+				</div>
+				<li>Delete From Database.</li>	
+				<div class="well well-sm">
+				<p class="text-primary"><strong>General Syntax</strong></p>
+				<p class="text-primary">Database::delete(App::DB('dbparams'),table,"WHERE ColumnName = ? ",array("value"));</p>
+				</div>
+			</ol>
+			
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

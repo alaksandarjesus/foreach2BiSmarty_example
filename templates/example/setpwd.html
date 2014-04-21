@@ -1,0 +1,25 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style("assets/css/signin.css")}
+{/block}
+{block name=body}
+
+  <div class="container">
+			<h3>{$Welcome|default:null}</h3>
+			
+ 		<h4>In this application we will see a sample Registration & Login Form</h4>			
+      {Form::open("example/setnewpwd",["method"=>"POST","class"=>"form-signin","role"=>"form"])}
+       	<h3>Set Password</h3>
+       {if isset($message) }<p span class="alert alert-danger">{$message|default:null}</p>{/if}
+       <p>{Form::password("Password",["class"=>"form-control","placeholder"=>"Enter New Password",required])}</p>
+       <p span class="text-danger">{Form::error_first("Password")}</p>
+       <p>{Form::hidden("Code",["class"=>"form-control","value"=>"{$Code}"])}</p>
+       <p span class="text-danger">{Form::error_first("Code")}</p>
+      {Form::submit("Set Password",["class"=>"btn btn-lg btn-primary btn-block"])}
+      
+      <a href="{App::Config('url')}example/register" >Register </a><br/>
+      {Form::close()}
+   	
+
+    </div> 
+{/block}

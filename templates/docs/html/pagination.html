@@ -1,0 +1,41 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Pagination"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			
+			<div class="row">
+				<ol>
+					<li>Instead of rewriting a seperate code for pagniation and sorting, we suggest  you to use DataTables that is a plug-in for the jQuery Javascript library.</li>
+					<li><a href="https://datatables.net/">Click Here For More documentation</a></li>
+					<li>Add the following code in the same order in your header block.</li>
+				
+				<div class="well well-sm">
+					&lt;link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css"&gt;<br />
+					&#123;HTML::script("assets/js/jquery.dataTables.min.js")&#125;<br />
+
+&lt;script src="https://cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.js"&gt;&lt;/script&gt;<br />
+&#123;literal&#125;<br />
+&lt;script type="text/javascript"&gt;<br />
+$(document).ready(function() &#123;<br />
+    $('#tableid').dataTable();<br />
+&#125; );<br />
+&lt;/script&gt;<br />
+&#123;/literal &#125;				<br />
+				</div>
+				<li>For working model of this with bootstrap, login to example page and you will see the pagination script in action.</li>
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

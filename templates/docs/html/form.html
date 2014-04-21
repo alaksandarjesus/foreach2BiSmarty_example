@@ -1,0 +1,68 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Forms"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/heading.html"}
+			<div class="alert alert-danger">Use &#123;nocache &#125; &#123;/nocache &#125; if you have switched on cache and returning form values and error messages</div>
+			<div class="row">
+				<p>In smarty array is denoted by [ ].</p>
+			<p>Example : array("var1"=>"var2","var3"=>"var4") is denoted as ["var1"=>"var2","var3"=>"var4"]</p>
+			<table class="table table-striped" >
+				<thead>
+					<tr><th>S.No.</th><th>Form type</th><th>Required</th><th>Optional</th></tr>	
+				</thead>
+				<tbody>
+					<tr><td>1</td><td>Form::open()</td><td>action</td><td>array(attributes)</td></tr>	
+					<tr><td>2</td><td>Form::text()<br />Form:: hidden()<br />Form::password()<br />Form::file()<br />Form::email ()<br />Form:: color()<br />Form::date()<br />Form::datetime()<br />Form::datetimelocal()<br />Form::month()<br />Form::number()<br />Form::range()<br />Form::tel()<br />Form::url()<br />Form::week()<br />Form::image</td><td>Name</td><td>array(attributes)</td></tr>
+					<tr><td>3</td><td>Form::radio()<br />Form::checkbox()</td><td>Name, Value</td><td>array(attributes)</td></tr>
+					<tr><td>4</td><td>Form::textarea()</td><td>Name</td><td>array(attributes),Value</td></tr>		
+					<tr><td>5</td><td>Form::select()</td><td>Name,array(attributes)</td><td></td></tr>		
+					<tr><td>6</td><td>Form::submit()<br />Form::reset()<br />Form::search()</td><td>Value</td><td>array(attributes)</td></tr>		
+				</tbody>	
+			</table> <br />
+			<table class="table table-striped" >
+				<thead>
+					<tr><th>S.No.</th><th>Form type</th><th>Form Class</th><th>Output</th></tr>	
+				</thead>
+				<tbody>
+					<tr><td rowspan="2">1.</td><td rowspan="2">Form Open <br/>Form Close</td><td class="text-danger">&#123;Form::open("controller/method",array (attributes))&#125;<br />Add "file"=>true to the array if fileupload is added.</td><td></td></tr>
+					<tr><td>&#123;Form::open("controller/method",["method"=>"Post", "action"=>"controller/method"])&#125;<br/>&#123;Form::close()&#125;</td><td></td></tr>
+					<tr><td rowspan="2">2.</td><td rowspan="2">text</td><td class="text-danger">&#123;Form::text("Name",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::text("Username",["value"=>"ForEach", class=>"MyClass"])&#125;</td><td>{Form::text("Username",["value"=>"ForEach", class=>"MyClass"])}</td></tr>
+					<tr><td rowspan="2">3.</td><td rowspan="2">password</td><td class="text-danger">&#123;Form::password("Name",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::password("Username",["value"=>"ForEach", class=>"MyClass"])&#125;</td><td>{Form::password("Username",["value"=>"ForEach", class=>"MyClass"])}</td></tr>
+					<tr><td rowspan="2">4.</td><td rowspan="2">hidden</td><td class="text-danger">&#123;Form::hidden("Name",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::hidden("Username",["value"=>"ForEach", class=>"MyClass"])&#125;</td><td>{Form::hidden("Username",["value"=>"ForEach", class=>"MyClass"])}</td></tr>
+					<tr><td rowspan="2">5.</td><td rowspan="2">file</td><td class="text-danger">&#123;Form::file("Name",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::hidden("Upload",[class=>"MyClass"])&#125;</td><td>{Form::file("Upload",[class=>"MyClass"])}</td></tr>
+					<tr><td rowspan="2">6.</td><td rowspan="2">submit <br /> search <br /> reset <br /></td><td class="text-danger">&#123;Form::xxxxx("Value",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::submit("Login",[class=>"MyClass"])&#125;</td><td>{Form::submit("Login",[class=>"MyClass"])}</td></tr>
+					<tr><td rowspan="2">7.</td><td rowspan="2">radio</td><td class="text-danger">&#123;Form::radio("Name","Value",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::radio("Gender","Male",[class=>"MyClass"])&#125; Male<br />&#123;Form::radio("Gender","Female",[class=>"MyClass"])&#125; Female</td><td>{Form::radio("Gender","Male",[class=>"MyClass"])}Male<br />{Form::radio("Gender","Female",[class=>"MyClass"])} Female</td></tr>
+					<tr><td rowspan="2">8.</td><td rowspan="2">checkbox</td><td class="text-danger">&#123;Form::checkbox("Name","Value",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::checkbox("Gender","Male",[class=>"MyClass"])&#125; Male<br />&#123;Form::checkbox("Gender","Female",[class=>"MyClass"])&#125; Female</td><td>{Form::checkbox("Gender","Male",[class=>"MyClass"])}Male<br />{Form::checkbox("Gender","Female",[class=>"MyClass"])} Female</td></tr>
+					<tr><td rowspan="2">9.</td><td rowspan="2">textarea</td><td class="text-danger">&#123;Form::textarea("Name","Value",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::textarea("textarea",Enter Your Text Here,[class=>"MyClass"])&#125;</td><td>{Form::textarea("textarea","Enter Your Text Here",[class=>"MyClass"])}</td></tr>
+					<tr><td rowspan="2">10.</td><td rowspan="2">select</td><td class="text-danger">&#123;Form::select("Name",array(attributes))&#125;</td><td></td></tr>
+					<tr><td>&#123;Form::select("Select",["optgroup"=>["Group 1"=>["Option-A|Option-A","Option-B|Option-B"]],"options"=>["Option-C|Option-C","Option-D|Option-D"]])&#125;</td><td>{Form::select("Select",["optgroup"=>["Group 1"=>["Option-A|Option-A","Option-B|Option-B"]],"options"=>["Option-C|Option-C","Option-D|Option-D"]])}</td></tr>
+					<tr><td rowspan="2">11.</td><td rowspan="2">email <br /> color<br />date<br />datetime<br />datetimelocal<br />month<br />number<br />range<br />tel<br />url<br />week<br />image</td><td class="text-danger">&#123;Form::xxxxx("Name",array(attributes))&#125; <br />replace xxxxx by type</td><td></td></tr>
+					<tr><td>&#123;Form::xxxxx("Email",["value"=>"ForEach", class=>"MyClass"])&#125;</td><td>replace xxxxx by type</td></tr>
+					
+				</tbody>	
+			</table>
+				<p class="alert alert-danger">&#123;Form::ckeditor('editorname')&#125;</p>
+				{Form::ckeditor('hello')}
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

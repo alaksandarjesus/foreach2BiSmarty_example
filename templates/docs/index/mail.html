@@ -1,0 +1,72 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style('assets/css/menu.css')}
+{/block}
+{block name=body}
+{include file="docs/navbar.html"}  
+{assign var="modal_title" value="Mail"}
+{assign var="modal_video" value="F8gaVWNNhJM"}
+<div class="row">
+	<div class="container">
+		<div id="content">
+			{include file="docs/index/horizontal_menu.html"}
+			<div class="row">
+				<ol>
+					<li>Open app/mail.php</li>
+					<li>The MVC framework uses PHPmailer.</li>
+					<li>Select option of Mailer. By default it is set to SMTP using gmail.</li>
+					<li>Set the credentials of username and password. Set the <span class="text-bordered">From</span> emailaddress and <span class="text-bordered">FromName</span></li>
+					<li>If you have planned for POP3 set it to true in the array with other credentials.</li>
+					<li class="text-primary">Example to send Emails.Refer for example <span class="text-bordered">controller/ExampleController.php -> public function resetpwd</span></li>
+					<div class="well">
+					<p class="text-danger">//Specify Email Parameters like sender address, subject. Uses PHP mailer. Check PHPmailer documentation.</p>
+							<p>$mail_phpmailer['Subject']="Your subject Here";</p>
+							<p>$mail_phpmailer['AddAddress']=array(sender_email,sender_name);</p>
+					<p class="text-danger">//Set the body items of the email that are variables.</p>
+							<p>$mail_template['variable1']=your variable1;</p>
+							<p>$mail_template['variable2']=your variable2;</p>
+							<p>$sendemail=Mail::send('path to emailtemplate',variables_passed_to_template,variables_to_mailer);</p>
+					</div>
+					<li>For detailed documentation of the parameters of php mailer <a href="http://www.tig12.net/downloads/apidocs/wp/wp-includes/PHPMailer.class.html#det_fields_to" target="_blank">Click Here.</a></li>
+				<li class="text-primary">Defining Instance Field with equal symbols</li>
+					<div class="well well-sm"><p>"AltBody","Body","CharSet","ConfirmReadingTo","ContentType",  "Encoding", "ErrorInfo","From", "FromName", 
+							"Helo", "Host", "Hostname", "LE", "Mailer", "MessageID", "Password", "PluginDir","Port", "Priority", 
+							"SMTPAuth", "SMTPDebug", "SMTPKeepAlive", "SMTPSecure", "Sender","Sendmail", "SingleTo", "Subject",
+							"Timeout", "Username", "Version", "WordWrap",  "error_count",  "message_type", "sign_cert_file", 
+							"sign_key_file","sign_key_pass", "smtp"</p></div>
+					<div class="alert alert-success">Example : $mail['Subject']="Hello User"</div>	
+				<li class="text-primary">Defining Instance Field as arrays</li>
+					<div class="well well-sm"><p>"CustomHeader","ReplyTo","attachment", "bcc",	"boundary", "cc","language","to"</p></div>
+					<div class="alert alert-success">Example : $mail['to']=array("user@gmail.com","foreach@gmail.com")</div>	
+				<li class="text-primary">Defining Instance Methods with no variables passed</li>
+					<div class="well well-sm"><p>1. "AttachAll","CreateBody", "CreateHeader","GetMailMIME","InlineImageExists","IsError", "IsHTML", "IsMail", "IsQmail", "IsSMTP", "IsSendmail",
+ 								 "RFCDate","Send","ServerHostname", "SetMessageType", "SetWordWrap","SmtpConnect"</p><p>2."ClearAddresses", "ClearAllRecipients", "ClearAttachments", "ClearBCCs", "ClearCCs", "ClearCustomHeaders",
+ 								 "ClearReplyTos","SmtpClose"</p></div>
+ 					<div class="alert alert-success">Example 1 : $mail['IsSMTP']=""; Example 2: $mail['ClearAddress']=""</div>	
+				<li class="text-primary">Defining Instance Methods as array with one variable</li>
+					<div class="well well-sm"><p>"AddCustomHeader","AddrFormat","Base64EncodeWrapMB","EncodeQ_callback","EndBoundary", "FixEOL","HasMultiBytes",  
+ 						 "Lang", "SecureHeader","ServerVar", "SetError", "TextLine","_mime_types","getFile"</p></div>
+ 					<div class="alert alert-success"> $mail['AddCustomHeader']=array($custom_header);</div>	
+				<li class="text-primary">Defining Instance Methods as array with two variables</li>
+					<div class="well well-sm"><p>"AddAddress","AddBCC", "AddCC","AddReplyTo","AddrAppend","EncodeFile","EncodeHeader", "EncodeQ",
+							"EncodeString","HeaderLine","MailSend", "MsgHTML","SendmailSend","SmtpSend","UTF8CharBoundary","set"</p></div>
+ 					<div class="alert alert-success"> $mail['AddAddress']=array($email,$username); $mail['AddAddress']=array($email,null); </div>	
+				<li class="text-primary">Defining Instance Methods as array with three variables</li>
+					<div class="well well-sm"><p>"EncodeQP","Sign","WrapText"</p></div>
+ 					<div class="alert alert-success"> $mail['WrapText']=array($message,$length,$qp_mode); $mail['WrapText']=array($message,$length,null); </div>	
+				<li class="text-primary">Defining Instance Methods as array with 4 variables</li>
+					<div class="well well-sm"><p>"AddAttachment","AddStringAttachment","GetBoundary","SetLanguage"</p></div>
+ 					<div class="alert alert-success"> $mail['AddAttachment']=array($path,$name,$encoding,$type); $mail['AddAttachment']=array($path,$name,null,null); </div>	
+				<li class="text-primary">Defining Instance Methods as array with 5 variables</li>
+					<div class="well well-sm"><p>"AddEmbeddedImage"</p></div>
+ 					<div class="alert alert-success"> $mail['AddEmbeddedImage']=array($path,$cid,$name,$encoding,$type); $mail['AddEmbeddedImage']=array($path,null,$name,null,null); </div>	
+			
+									
+				</ol>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{/block}

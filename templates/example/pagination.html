@@ -1,0 +1,42 @@
+{extends file="layouts/bootstrap.html"}
+{block name=head}
+{HTML::style("assets/css/signin.css")}
+<link rel="stylesheet" type="text/css" href=
+	"https://cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.css">
+
+{HTML::script("assets/js/jquery.dataTables.min.js")}
+
+<script src="https://cdn.datatables.net/plug-ins/505bef35b56/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+{literal}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#userlist').dataTable();
+} );
+</script>
+{/literal}
+{/block}
+{block name=body}
+
+  <div class="container">
+		
+			
+	  {if isset($message)}	<p class="alert alert-danger">{$message|default:null}</p> {/if}			
+		{*Remember as you have enabled the cache, the code will not executed instead the cached template will be executed. So use nocache option.*}
+		<p class="alert alert-success"><strong>Welcome</strong>{nocache}{Session::read('User')}{/nocache}</p>		
+		<table id="userlist" class="table table-striped table-bordered" cellspacing="0" width="100%">
+			
+			<thead>
+				<tr><th>S.No.</th><th>UserName</th><th>Email</th><th>Photo</th></tr>		</thead>	
+				<tbody>
+				{nocache}
+				{for $i=0 to count($UserName)-1}
+				<tr><td>{$i+1}</td><td>{$UserName.$i}</td><td>{$Email.$i}</td><td><img src="{App::Config('url')}assets/images/{$Photo.$i}"></td></tr>		
+				{/for}
+				{/nocache}
+				</tbody>
+		</table>	
+			
+		<a href="{App::Config('url')}example/logout" ><button class="btn btn-md btn-danger">Logout</button>	</a>
+		{HTML::br(10)}
+ 	</div> 
+{/block}
