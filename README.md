@@ -1,4 +1,4 @@
-foreach2Bismarty is a MVC php framework created by a group of engineers from India. This project was created to utilize the best of SMARTY and BOOTSTRAP in mind. 
+<b>foreach2Bismarty</b> is a MVC php framework created by a group of engineers from India. This project was created to utilize the best of SMARTY and BOOTSTRAP in mind. 
 
 This MVC is tested with PHP 5.5.
 
@@ -21,13 +21,11 @@ The users are suggested to read their license agreement and make sure they compl
 
 The current version is included with Bootstrap and the same methodology can be applied for different CSS frameworks.
 
-A detailed documentation and working example can be downloaded from here.
-
 A series of video tutorial can be through youtube with a search of  iSEED tutorials or iSEED Page.
 
 Queries, misleading informations, incorrect informations and clarifications shall be posted to iseedonline@gmail.com for time being.
 
-We are also in the mode of fundraising for our dream project of virtual education and if you wish to make a contribution, please drop use this link to pass your donation.https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ZJVBBBGMDPVS
+We are also in the mode of fundraising for our dream project of virtual education and if you wish to make a contribution, please drop use this link to pass your donation.<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ZJVBBBGMDPVS">Support/Donate</a>
 
 
 
